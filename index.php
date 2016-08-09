@@ -61,7 +61,7 @@
           <div class="input-title">
             <h4>Find Your Giphy!</h4>
           </div>
-          <form class="input-form" action="index.php" method="post">
+          <form class="input-form" action="giphy_results.php" method="post">
             <input id="search-field" type="text" name="giphy" placeholder="Search For Giphy...">
             <input id="search-button" class="btn btn-success" type="submit" name="submit" value="Search">
           </form>
