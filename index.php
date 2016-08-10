@@ -47,15 +47,7 @@
       </div>
       <div class="search-input-container">
         <div class="suggestion-boxes">
-          <div class="suggestion-box">
-
-          </div>
-          <div class="suggestion-box">
-
-          </div>
-          <div class="suggestion-box">
-
-          </div>
+          <span>Suggestions:<div id="suggestion-box"></div></span>
         </div>
         <div class="input-container">
           <div class="input-title">
@@ -72,5 +64,6 @@
 
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/suggestion_box.js"></script>
   </body>
 </html>
