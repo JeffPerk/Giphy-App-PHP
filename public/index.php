@@ -1,22 +1,5 @@
 <?php
-//   $curl = curl_init();
-//   if (isset($_POST['submit'])) {
-//     dd($_POST);
-//     curl_setopt_array($curl, array(
-//       CURLOPT_RETURNTRANSFER => 1,
-//       CURLOPT_URL => 'http://api.giphy.com/v1/gifs/search?q='. $q .'&api_key=dc6zaTOxFJmzC',
-//       CURLOPT_USERAGENT => 'Giphy Sample Request'
-//     ));
-//
-//   $resp = curl_exec($curl);
-//   // pre($resp);
-//
-//   curl_close($curl);
-// }
-//
-//   function pre($var) {
-//    	echo sprintf('<pre>%s</pre>', print_r($var, true));
-//   }
+  require_once '../includes/giphy_data.php';
 ?>
 
 <!DOCTYPE html>
@@ -54,7 +37,7 @@
           <div class="input-title">
             <h4>Find Your Giphy!</h4>
           </div>
-          <form class="input-form" action="giphy_results.php" method="post">
+          <form class="input-form"  method="post">
             <input id="search-field" type="text" name="giphy" placeholder="Search For Giphy...">
             <input id="search-button" class="btn btn-success" type="submit" name="submit" value="Search">
           </form>
