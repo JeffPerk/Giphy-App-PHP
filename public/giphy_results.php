@@ -1,9 +1,3 @@
-<?php
-  include ('../includes/giphy_data.php');
-
-  echo $resp;
- ?>
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -11,6 +5,6 @@
     <title>Giphy Results</title>
   </head>
   <body>
-    
+    Test
   </body>
 </html>

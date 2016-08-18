@@ -9,7 +9,6 @@
     ));
 
   $resp = curl_exec($curl);
-  // pre($resp);
 
   curl_close($curl);
   header('Location:giphy_results.php');
