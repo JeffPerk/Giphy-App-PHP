@@ -1,5 +1,7 @@
 <?php
-  require_once '../includes/giphy_data.php';
+  if (isset($_POST['submit']) && !empty($_POST['giphy'])) {
+    header('Location: giphy_results.php');
+  }
 ?>
 
 <!DOCTYPE html>
@@ -37,7 +39,7 @@
           <div class="input-title">
             <h4>Find Your Giphy!</h4>
           </div>
-          <form class="input-form"  method="post">
+          <form class="input-form" action="giphy_results.php" method="post">
             <input id="search-field" type="text" name="giphy" placeholder="Search For Giphy...">
             <input id="search-button" class="btn btn-success" type="submit" name="submit" value="Search">
           </form>
