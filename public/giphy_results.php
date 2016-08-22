@@ -39,9 +39,41 @@ if (isset($_POST['submit'])) {
     <section class="results-container">
       <div class="results-bar">
         <?php foreach ($data['data'] as $key => $value): ?>
-          <?php echo "<div><img id='image-thumbnail' src='".$value['images']['fixed_height_small']['url']."'/></div>"; ?>
+          <?php echo "<div class='gif-image'><img style='height: 100%; width: 100%;' id='image-thumbnail' src='".$value['images']['fixed_height_small']['url']."'/></div>"; ?>
         <?php endforeach; ?>
       </div>
+      <div id="modal"></div>
     </section>
+
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      $(function() {
+        var currentMousePos = {x: -1, y: -1};
+        $(document).mousemove(function(event) {
+          currentMousePos.x = event.pageX;
+          currentMousePos.y = event.pageY;
+          if($('#modal').css('display') != 'none') {
+            $('#modal').css({
+              top: currentMousePos.y,
+              left: currentMousePos.x + 12
+            });
+          }
+        });
+        $('.gif-image').on('mouseover', function() {
+          var image = $(this).find('#image-thumbnail');
+          var modal = $('#modal');
+          $(modal).html(image.clone());
+          $(modal).css({
+              top: currentMousePos.y,
+              left: currentMousePos.x + 12
+          });
+          $(modal).show();
+        });
+        $('.gif-image').on('mouseleave', function() {
+          $(modal).hide();
+        });
+      });
+    </script>
   </body>
 </html>
