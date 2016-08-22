@@ -23,11 +23,25 @@ if (isset($_POST['submit'])) {
   <head>
     <meta charset="utf-8">
     <title>Giphy Results</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" charset="utf-8">
+    <link rel="stylesheet" href="css/style_main.css" charset="utf-8">
+    <link href='https://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
   </head>
   <body>
-    <?php foreach ($data['data'] as $key => $value): ?>
-      <?php //echo "<pre>".print_r($value, true)."</pre>"; ?>
-      <?php echo "<img src='".$value['images']['fixed_height']['url']."'/>"; ?>
-    <?php endforeach; ?>
+    <section class="header-container">
+      <div class="app-name">
+        <a id="giphy-title" href="index.php">GiphyApp</a>
+      </div>
+      <div class="favorites-link">
+        Favorites
+      </div>
+    </section>
+    <section class="results-container">
+      <div class="results-bar">
+        <?php foreach ($data['data'] as $key => $value): ?>
+          <?php echo "<div><img id='image-thumbnail' src='".$value['images']['fixed_height_small']['url']."'/></div>"; ?>
+        <?php endforeach; ?>
+      </div>
+    </section>
   </body>
 </html>
