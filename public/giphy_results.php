@@ -3,11 +3,9 @@
 if (isset($_POST['submit'])) {
   $curl = curl_init();
   $q = $_POST['giphy'];
-  if (ctype_space($q)) {
-    echo "I'm here";
-    // $search_q = str_replace(" ", "", $q);
+  if (strpos($q, " ")) {
+    $q = str_replace(" ", "", $q);
   }
-  // echo $search_q;
   curl_setopt_array($curl, array(
     CURLOPT_RETURNTRANSFER => 1,
     CURLOPT_URL => 'http://api.giphy.com/v1/gifs/search?q='. $q .'&api_key=dc6zaTOxFJmzC',
